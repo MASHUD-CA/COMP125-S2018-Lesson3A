@@ -59,7 +59,7 @@ let app = (function () {
 
         let mySentence = "";
         paragraph.textContent = mySentence;
-        
+
         /*// How to create array
         let myArray = []; // means create an empty array container / how to create empty array
         myArray[0] = "Hello World! ";
@@ -67,29 +67,29 @@ let app = (function () {
         myArray[2] = true;
         myArray.push("Here is another element: ")
         */
-       /*
-       let myArray = new Array(); // equevalent to let myArray = [];
-       */
+        /*
+        let myArray = new Array(); // equevalent to let myArray = [];
+        */
 
         let myArray = [
-          
-          /*  "My First String",
-            "My Second String",
-            "My Third String",
-            "My Fourth String"
-            */
-           // OR Array of an objects
-           {name: "Mashud_1", age: 25},
-           {name: "Mashud_2", age: 35},
-           {name: "Mashud_3", age: 45},
-           {name: "Mashud_4", age: 55},
-           {name: "Mashud_5", age: 65},
-               
+
+            /*  "My First String",
+              "My Second String",
+              "My Third String",
+              "My Fourth String"
+              */
+            // OR Array of an objects
+            { name: "Mashud_1", age: 25 },
+            { name: "Mashud_2", age: 35 },
+            { name: "Mashud_3", age: 45 },
+            { name: "Mashud_4", age: 55 },
+            { name: "Mashud_5", age: 65 },
+
         ];
-       // myArray.push(5);
-       // myArray[20] = "okay this is weird"; // length turned to 6 to 20 that not possible in C# or C++
-       myArray.push({name: "Mashud_6", age: 75});
-       myArray.unshift({name: "Ahmed_1", age: 20}); // we will get Ahmed_1 as first line
+        // myArray.push(5);
+        // myArray[20] = "okay this is weird"; // length turned to 6 to 20 that not possible in C# or C++
+        myArray.push({ name: "Mashud_6", age: 75 });
+        myArray.unshift({ name: "Ahmed_1", age: 20 }); // we will get Ahmed_1 as first line
 
 
 
@@ -107,67 +107,90 @@ let app = (function () {
             console.log(myArray[index].name);
         }
         */
-       /* loop type # 2 - foreach (modern)
-        myArray.forEach(person => {
-            console.log(person.name);
+        /* loop type # 2 - foreach (modern)
+         myArray.forEach(person => {
+             console.log(person.name);
+         });
+         */
+        /*loop type # 3 - foreach (classic) Annonymous function inside
+        myArray.forEach(function(person){
+         console.log(person.name);
         });
         */
-       /*loop type # 3 - foreach (classic) Annonymous function inside
-       myArray.forEach(function(person){
-        console.log(person.name);
-       });
-       */
-      /* loop type # 4 - for in  (modern)
-       for (const index in myArray) {
-        console.log(myArray[index].name);
+        /* loop type # 4 - for in  (modern)
+         for (const index in myArray) {
+          console.log(myArray[index].name);
+         }
+         */
+        /* loop type # 5 - for of  (modern)
+        for (const person of myArray) {
+         console.log(person.name);
+        }
+        */
+        /* loop type # 6 - while (classic)
+        let index = 0;
+        while(index < myArray.length){
+          console.log(myArray[index].name);
+          index++;
+        }
+        */
+
+        let arrayEmpty = true;
+        /*  if - else toggle 
+       if(myArray.length > 0 ){
+          arrayEmpty = false;
+       }
+       else{
+           arrayEmpty = true;
        }
        */
-       /* loop type # 5 - for of  (modern)
-       for (const person of myArray) {
-        console.log(person.name);
-       }
-       */
-      /* loop type # 6 - while (classic)
-      let index = 0;
-      while(index < myArray.length){
-        console.log(myArray[index].name);
-        index++;
-      }
-      */
-    
-     let arrayEmpty = true;
-      /*  if - else toggle 
-     if(myArray.length > 0 ){
-        arrayEmpty = false;
-     }
-     else{
-         arrayEmpty = true;
-     }
-     */
-    // ternary operator  - alternate toggle condition statement 
-     arrayEmpty = (myArray.length > 0 ) ? false : true;
+        // ternary operator  - alternate toggle condition statement 
+        arrayEmpty = (myArray.length > 0) ? false : true;
 
-     if(myArray[1].name == "Mashud_1"){
-         console.log("Second Element is Mashud_1");
-     }
-     //=== checks both value and type where == only checks value
-     if(myArray[0].age === 20){
-         console.log("My Age is 20"); // unshift used before so index 0 will show unshift method.
-     }
+        if (myArray[1].name == "Mashud_1") {
+            console.log("Second Element is Mashud_1");
+        }
+        //=== checks both value and type where == only checks value
+        if (myArray[0].age === 20) {
+            console.log("My Age is 20"); // unshift used before so index 0 will show unshift method.
+        }
 
-     //associateive arrays vreate this key /  value pair associatation but hiere is no iteration
-     // which menas you cannot loop thorugh them
-     let myAssociateArray = [];
-     myAssociateArray["Name"] = "Mashud_11";
-     myAssociateArray["Age"] = 255;
-     myAssociateArray["StudentNum"] = "ABC000000";
+        //associateive arrays vreate this key /  value pair associatation but hiere is no iteration
+        // which menas you cannot loop thorugh them
+        let myAssociateArray = [];
+        myAssociateArray["Name"] = "Mashud_11";
+        myAssociateArray["Age"] = 255;
+        myAssociateArray["StudentNum"] = "ABC000000";
 
-     console.log(myAssociateArray);
-     console.log(myAssociateArray.Name);
-     console.log(myAssociateArray["Name"]);
+        console.log(myAssociateArray);
+        console.log(myAssociateArray.Name);
+        console.log(myAssociateArray["Name"]);
+        // myAssociateArray cannot useable in loop like for/for of/for in/...
 
-     // myAssociateArray cannot useable in loop like for/for of/for in/...
-     
+        let myFarouriteThingsList = [
+            "Video Games",
+            "Movies",
+            "Cars",
+            "Space Flight"
+
+        ];
+
+        //"Hook into" a ul that is empty that has an id of myFarouriteThings;
+        let myFavouritesList = document.getElementById("myFavouriteThings");
+        //foreach loop used here.
+        
+        myFarouriteThingsList.forEach(thing => {
+            let newItem = document.createElement("li");
+            newItem.textContent = thing;
+            myFavouritesList.appendChild(newItem);
+        });
+        
+
+        //let newItem = document.createElement("li");
+        //newItem.textContent = "hello";
+        //myFavouritesList.appendChild(newItem);
+        console.log(myFavouritesList);
+
 
 
 
